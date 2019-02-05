@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>The Architectural Blog</title>
+<meta charset="UTF-8">
+<link href='http://fonts.googleapis.com/css?family=Niconne' rel='stylesheet' type='text/css'>
+<style>
+
+	* {
+		margin:0; padding:0;
+	}
+	body {
+		font-family: 'Times New Roman',serif;
+		background-image:url('background.jpg');
+		background-attachment:fixed;
+		background-repeat:no-repeat;
+		background-size:100%;
+	}
+	li { list-style:none; }
+	a {
+		text-decoration: none; 
+		color:black;
+	}
+	img { border: 0; }
+
+	#page-wrapper {
+		overflow: hidden;
+		position: relative;
+		width:960px;
+		margin:0 auto 0 auto;
+	}
+	#main-title {
+		margin: 0 0 0 15px;
+		font-size: 45px;
+		font-family: 'Niconne', cursive;
+	}
+
+
+	#main-navigation{
+		overflow: hidden;
+	}
+	#navigation-left {
+		float: left;
+	}
+	.navi-link {
+		display: block;
+		margin:0 0 5px 30px;
+		float: left;
+		font-size:35px;
+		font-family: 'Niconne', cursive;
+		text-align: center;
+		color:#C8C8C8;
+		height:35px; width:200px;
+	}
+	.navi-link:first-child {
+		margin:0 0 0 50px;
+	}
+	.navi-link > a:hover {
+		color: #C8C8C8;
+	}
+
+	#navigation-right {
+		float: right;
+	}
+	#search {
+		overflow: hidden;
+		width:182px;
+		margin:5px 0 0 0;
+	}
+	.search-input {
+		float: left;
+		background-color:#D0D0D0;
+		border:1px solid black;
+		width:120px; height:24px;
+		border-radius:15px 0 0 15px;
+		padding:0 0 0 10px;
+	}
+	.search-input:focus {
+		outline:0;
+		background-color: white;
+	}
+	.search-button {
+		float: left;
+		border:1px solid black;
+		width:50px; height:26px;
+		border-radius:0 15px 15px 0;
+		outline:0;
+	}
+
+	#main-body { 
+		overflow: hidden;
+		margin: 15px 0 0 0;
+		float: left;
+		width:740px;
+	}
+
+	#article {
+		border-radius:15px;
+		margin:0 0 15px 0;
+		background-image:url('black50.png');
+		color:#D0D0D0;
+	}
+	#article-content {
+		padding:15px;
+	}
+	.article-header {}
+	.article-title {
+		font-size:35px;
+	}
+	.article-body {
+		margin:15px 0;
+	}
+	.article-body > img {
+		width:430px; height:280px;
+	}
+	.article-body > p {
+		font-size:20px;
+		font-weight:bold;
+	}
+
+
+	#menu-bar {
+		overflow: hidden;
+		float: right;
+		border-radius:15px;
+		text-align: center;
+		background-image:url('black50.png');
+		margin:15px 0 0 0;
+		width:190px;
+	}
+	#show, #hide { display: none;}
+
+	.main-art{
+		display: block;
+		margin:15px auto;
+		overflow: hidden;
+		width:150px;
+	}
+	input:nth-of-type(1):checked~section.main-art > label:nth-of-type(1) {
+		background: black;
+		color: white;
+	}
+	input:nth-of-type(2):checked~section.main-art > label:nth-of-type(2) {
+		background: black;
+		color: white;
+	}
+
+	section.main-art > label {
+		display: block;
+		float: left;
+		line-height:30px;
+		width:73px; height:30px;
+		border:1px solid black;			
+	}
+	input:nth-of-type(1)~div:nth-of-type(1) { display: none; }
+	input:nth-of-type(1):checked~div:nth-of-type(1) { display: block; }
+
+
+	#main-art > h3 {
+		margin:15px 0;
+		font-size:25px;
+		color:#D0D0D0;
+	}
+
+	.indv-art {
+
+		width:182px;
+		border-top: none;
+	}
+	.thumbnail {
+		
+		margin:0 0 0 10px;
+	}
+	.thumbnail > img {
+		width:75px; height:75px;
+	}
+	.thumbnail > img:hover {
+		float:left;
+		margin:0 0 0 10px;
+		width:120px; height:120px;
+	}
+	
+	.description > strong {
+		display: block;
+		margin: 5px auto 15px auto;
+		width:120px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	#footer {
+		overflow: hidden;
+		text-align: center;
+		width:960px;
+		margin:30px auto 15px auto;
+	}
+	#footer > h3 {
+		color: black;
+		font-size:35px;
+	}
+
+	#footer > .social-nets > a > img {
+		width:30px; height:30px;
+		margin: auto;
+	}
+
+</style>
+</head>
+
+<body>
+<div id="page-wrapper">
+
+	<div id="main-title">
+		<h1>The Architectural Blog</h1>
+	</div>
+	<hr>
+	<div id="main-navigation">
+		<nav id="navigation-right">
+			<form id="search">
+				<input class="search-input" type="text" />
+				<button class="search-button" type="submit"><img src="search.png" /></button>
+			</form>
+		</nav>
+		<div id="navigation-left">
+			<ul>
+				<li class="navi-link"><a href="http://www.architecture.com/">Royal Institute</a></li>
+				<li class="navi-link"><a href="http://www.architecturaldigest.com">Arch. Digest</a></li>
+				<li class="navi-link"><a href="http://www.archdaily.com">Arch Daily</a></li>
+			</ul>
+		</div>
+	</div>
+	<hr>
+
+	<section id="main-body">
+		<div id="article">
+			<div id="article-content" >
+				<div class="article-header">
+					<h1 class="article-title" id="art1">Santa Maria Church</h1>
+					<p class="article-date">2017-10-15</p>
+				</div>
+				<div class="article-body">
+					<img src="http://lisacady.com/wp-content/uploads/2017/06/23-600x4001.png"></img>
+					<p> &nbsp;&nbsp;&nbsp;&nbsp;산타마리아 성당은 내가 건축학과로서 마지막으로 깊이 공부하고 재설계한 건축물이라 내게 지억에 가장 크게 남는다. 이 성당은 포르투갈의 북지방에 위치하고 있다. 형식을 맞추는 의미로 사진을 한장밖에 제공하지 못해서 겉의 제일 독특한 특징을 보인다고 생각하는 측면을 사진으로 올렸다. <br />
+					&nbsp;&nbsp;&nbsp;&nbsp;포르투갈의 성당 혹은 교회들의 특징엔 주변과의 거리를 두기위해 벽들이 세워져있고 주 공간에 접근하기 위해서는 계단이나 사다리를 이용하여야 한다. 산타마리아 성당은 매우 가파로운 경사에 지어졌고 이 특징들을 살렸다. <br />
+					&nbsp;&nbsp;&nbsp;&nbsp;사진에는 앞면만이 보여 뒷쪽이 안보이지만 뒤에는 수백개의 집들로 이루어진 마을이 있다. 이 성당은 이러한 시끄러운 경관에 등을 지고 있어 아크로폴리스를 형성한다. <br />
+					이 성당의 제일 커다랑 특징이자 매력이라고 생각하는 것은 건축가인 Alvaro Siza는 무신론자인 것이다. 그 이유로 그는 건물 내에 예배가 아닌 자유로운 생각을 위한 장소도 포함하고, 미래에 종교적인 이유 외로 사용할 수 있게 설계하였다.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="article">
+			<div id="article-content" >
+				<div class="article-header">
+					<h1 class="article-title" id="art2">Sagrada Familia(사그라다 파밀리아)</h1>
+					<p class="article-date">2017-10-15</p>
+				</div>
+				<div class="article-body">
+					<img src="http://i.dailymail.co.uk/i/pix/2013/10/01/article-2440014-186BB23C00000578-629_964x541.jpg"></img>
+					<p> &nbsp;&nbsp;&nbsp;&nbsp; 이 성당은 상당히 유명한 건축물이므로 건축에 관심이 없는 사람이라 해도 아는 사람들이 많다. 이 건축물은 안토니 가우디가 설계한 사그라다 파밀리아고 시공은 1882년에 시작되었고 아직도 완성이 안되어있다. 느린 진행에 관해 누가 물어보자 가우디의 대답은 "저의 고객은 급한게 없으십니다"라고 대답하였다. <br />
+					&nbsp;&nbsp;&nbsp;&nbsp;보이다시피 이 성당은 지금도 보기에는 매우 특이한 어뢰모양으로 되어있다. 각 탑구조는 예수님, 그의 12명의 제자, 성마리아, 그리고 4명의 전도자를 상징한다. 하지만 이 성당에 대한 구체적인 설명은 매우 길고 독자가 지루하게 느낄 수 있어서 가우디의 죽음에 대해 설명하겠겠다. <br />
+					&nbsp;&nbsp;&nbsp;&nbsp;안토니 가우디의 죽음은 매우 안타까운 일이었다. 그가 산책을 하던 날에 차에 치여 의식을 잃었다고 한다. 당시에 신분증을 안가지고 있어서 누가 바로 도와주려고 하지 않았따. 드디어 경관이 그를 택시에 태워 병원에 데려갔지만 거기서도 초보적인 치료를 받았다. 그가 가우디라는 사실을 직원들이 알아 챘을 때는 너무 늦었었고 그는 그렇게 세상을 떠났다고 한다.</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="article">
+			<div id="article-content" >
+				<div class="article-header">
+					<h1 class="article-title" id="art3">1WTC</h1>
+					<p class="article-date">2017-10-15</p>
+				</div>
+				<div class="article-body">
+					<img src="http://patrikslettman.com/wp-content/uploads/2012/04/freedom-tower-100-floors.jpg"></img>
+					<p> &nbsp;&nbsp;&nbsp;&nbsp;1WTC는 또한 one world trade center로 불리고 시공 과정동안에는 Freedom Tower이라고도 불렸다. 1WTC는 사실상 두개의 건물에 주어진 이름인데, 이 글에서는 104층짜리 슈퍼톨 스터럭쳐만 제시하겠따.<br />&nbsp;&nbsp;&nbsp;&nbsp; 이 건축물이 특별한 이유는 설계가 매우 이쁘게 되있거나, 유명한 사람이 설계 혹은 시공을 담당하였거나 높기 때문이 아니다. 세상에서 제일 높은 건물중 4위에 들기는 하지만 그런 면에서는 그닥 특별하지가 않다. 1WTC의 특징은 2001년 9/11테러 때 무너졌던 쌍둥이 건물들 자리에 지어져있다는 것이다. 즉, 무역을 주 목적으로 사용되는 건물이긴 하지만 미국인들에게는 희망을 상징하기도 한다고 한다. </p>
+				</div>
+			</div>
+		</div>
+
+		<div id="article">
+			<div id="article-content" >
+				<div class="article-header">
+					<h1 class="article-title" id="art4">Church of the Light</h1>
+					<p class="article-date">2017-10-15</p>
+				</div>
+				<div class="article-body">
+					<img src="http://features.cgsociety.org/newgallerycrits/g64/28764/28764_1292720175_large.jpg"></img>
+					<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이 건축물은 Church of the Light이다. 이 건축가는 너무나도 잘 알려져 있고 작품들의 특성들이 너무 두드러지게 나타나서 누구나 이 건축가의 작품 5개 이하를 보기만 해도 나중에 그의 작품들을 식별할 수 있다. 이 건축가가 도대체 누구냐? 그 유명한 일본 건축가, 타다오 안도다. <br />
+					&nbsp;&nbsp;&nbsp;&nbsp;타다오 안도의 작품들은 최소한의 구성요소들을 가진다. 대표적으로 콘크리트, 빛, 물, 그리고 나머지 자연 경관들이다. 이 교회는 이 구성요소들을 안도의 이러한 건축물에 관한 단념들을 너무나도 잘 나타내고 있다. 인공 재려라는것은 콘크리트 외에는 사용한것이 없으며 이 재질은 이 교회의 분위기를 살린다다(???)고 보면 된다. 사진만 보아도 느껴지지 않는가, 이 겸손하고 명상적인 교회 분위기가. 이 교회를 방문하는 사람은 신적인 존재를 인정할 수 밖에 없지 않을까 한다.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="article">
+			<div id="article-content" >
+				<div class="article-header">
+					<h1 class="article-title" id="art5">Colosseum</h1>
+					<p class="article-date">2017-10-15</p>
+				</div>
+				<div class="article-body">
+					<img src="http://www.aviewoncities.com/img/rome/kveit1586s.jpg"></img>
+					<p>&nbsp;&nbsp;&nbsp;&nbsp;이 건축물은 도대체 무엇일까? 지금까지 돌 밑에서 살지 않았ㅏ고는 한 모를 사람이 있다. 이름은 콜로세옴이고 로마시대에 지어진 원형 극장이다. 내가 아쉽게 느끼는 것은 사람들은 이 건축물의 특징을 알면서도 관심이 없는 관계로 대화에 언급되도 그다지 신나거나 멋있다고 생각하는 사람들이 적다. <br />
+					&nbsp;&nbsp;&nbsp;&nbsp; 앞서 말했듯이 로마시대에 지어진 건물이다 지금까지도 세계 최대 크기의 원형크기이다. 포스팅한 사진은 콜로세옴이 아직도 그대로 존재했으면 어떻게 생겼을지를 묘사한 렌더링인데 너무나 신기하지 않는가, 거의 2천년전인 로마시대에 이런 대규모의 건축물을 지었다는 것이. 최소한 5만, 최대 8만명이나 콜로세옴에서 검투사들이나 연극 등을 구경할 수가 있었다고 한다. 다같이 전투의 열기에 취해 환호성을 지르는 관중들을 상상만 해도 멋있고 경험하고 싶다.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div id="menu-bar">
+		<h3>Recent Articles</h3>
+		<input id="show" type="radio" name="vis" />
+		<input id="hide" type="radio" name="vis" checked="checked" />
+		<section class="main-art">
+			<label for="show">Show</label>
+			<label for="hide">Hide</label>
+		</section>
+
+		<div class="article-item">
+			<li class="indv-art">
+				<a href="#art1">
+					<div class="thumbnail">
+						<img src="http://static.dezeen.com/uploads/2009/05/duccio-malagamba-photographs-alvaro-siza-santa-maria-church-4.jpg" />
+					</div>
+					<div class="description">
+							<strong>Santa Maria Church</strong>
+					</div>
+				</a>
+			</li>
+			<li class="indv-art">
+				<a href="#art2">
+					<div class="thumbnail">
+						<img src="http://www.tripandrate.com/content/images/barcelona/places/gaudi/sagrada-familia.sq.jpg">
+					</div>
+					<div class="description">
+							<strong>Sagrada Familia</strong>
+					</div>
+				</a>
+			</li>
+			<li class="indv-art">
+				<a href="#art3">
+					<div class="thumbnail">
+						<img src="http://upload.wikimedia.org/wikipedia/commons/a/ac/OneWorldTradeCenter.jpg">
+					</div>
+					<div class="description">
+							<strong>One World Trade Center</strong>
+					</div>
+				</a>
+			</li>
+			<li class="indv-art">
+				<a href="#art4">
+					<div class="thumbnail">
+						<img src="http://ad009cdnb.archdaily.net/wp-content/uploads/2011/01/1294204525-churchoflight-naoyafujii-375x500.jpg">
+					</div>
+					<div class="description">
+							<strong>Church of the Light</strong>
+					</div>
+				</a>
+			</li>
+			<li class="indv-art">
+				<a href="#art5">
+					<div class="thumbnail">
+						<img src="http://upload.wikimedia.org/wikipedia/commons/5/53/Colosseum_in_Rome,_Italy_-_April_2007.jpg">
+					</div>
+					<div class="description">
+							<strong>Colosseum</strong>
+					</div>
+				</a>
+			</li>
+		</div>
+
+	</div>
+</div>
+	<footer id="footer">
+		<h3>Copyright@2017 Jiesang Ahn</h3>
+		<spand class="social-nets">
+			<a href="https://www.instagram.com/dir._ahn/"><img src="instagram.png"></img></a>
+			<a href="https://www.twitter.com/jsahn93"><img src="twitter.png"></img></a>
+		</spand>
+	</footer>
+</body>
+</html>
